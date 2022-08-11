@@ -12,3 +12,19 @@ try {
 }
 }); 
 
+router.post("/", async (req, res) => {
+    try {
+const todo = new Todo({
+    title: req.body.title,
+    description: req.body.description,
+    completed: req.body.completed,
+});
+const todoSaved = todo.save();
+res.json(todoSaved);
+
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+module.exports = router;
