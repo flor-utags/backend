@@ -14,5 +14,4 @@ completed: {
     default: false,
 },
 }];
-
 module.exports = mongoose.model("todos", TodoSchema);
